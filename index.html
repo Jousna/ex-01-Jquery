@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Petit-Nuage</title>
+  <link rel="stylesheet" type="text/CSS" href="style.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(document).on("submit", "form", function(e) {
+        e.preventDefault();
+        var x = parseInt($(".x").val());
+        var y = parseInt($(".y").val());
+        console.log(x)
+
+        $(".image").animate({
+          left: "+=" + x + "px",
+          top: "+=" + y + "px"
+        });
+
+      });
+
+    });
+  </script>
+
+</head>
+
+<body>
+  <form>
+    <input class="x" name="valeur1" type="text" placeholder="entrez une valeur (x)">
+    <input class="y" name="valeur2" type="text" placeholder="entrez une valeur (y)">
+    <input type="submit" value="Move">
+
+    <div class="image">
+      <img src="http://us.123rf.com/450wm/sararoom/sararoom1306/sararoom130600008/20275357-illustration-de-nuages--de-bande-dessin-e-avec-tonnerre.jpg?ver=6"
+      </div>
+
+</body>
+
+</html>
